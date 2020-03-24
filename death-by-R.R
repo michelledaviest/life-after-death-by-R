@@ -1,5 +1,7 @@
 library(grid)
 
+#png(filename="deathR.png")
+
 #function to draw a grid and colour it a passed colour. also pass coordinates
 draw_grid <- function(dat, ht=1/10, wt=1/10, vp, colour="lightgrey") {
   grid.rect(x = dat$x,y = dat$y,height = ht, width = wt, hjust = 0,
@@ -33,7 +35,9 @@ dat <- data.frame(x = rep(0.55, 1),
 draw_grid(dat, 1/10, 1/20, vp1, "red")
 
 #draw the rotated R
-#grid.text doesn't have a rot function so used textGrob
+#grid.text doesn't have a rot parameter so used textGrob
 gxa = textGrob("R", x = 0.55, y = 0.51, rot = 340, check.overlap = TRUE, 
          gp = gpar(cex=10, fontfamily="mono",lwd = 20), vp = vp1)
 grid.draw(gxa)
+
+#dev.off()
