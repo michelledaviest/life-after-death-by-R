@@ -21,16 +21,19 @@ gcd <- function(num1,num2) {
 n = 12
 mat.gcd = matrix(0, nrow=n, ncol=n)
 mat.steps = matrix(0, nrow=n, ncol=n)
-mat = matrix(0, nrow=n, ncol=n)
 for(a in 1:n){
   for(b in 1:n){
     df = gcd(a,b)
-    mat.gcd[a,b] = df$gcd
+    if(df$gcd==1){
+      mat.gcd[a,b] = 1
+    }
     mat.steps[a,b] = df$steps
   }
   cat("\n")
 }
 
 library('plot.matrix')
-plot(mat.gcd)
-plot(mat.steps)
+plot(mat.gcd,col=c("black","white"))
+#plot(mat.steps)
+image (0:n,0:n, mat.gcd , asp = 1, axes = F, col = c( 'white ', 'black ' ),
+        xlab = 'a', ylab = 'b', main = 'Coprime Pairs ' )
