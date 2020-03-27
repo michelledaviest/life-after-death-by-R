@@ -17,7 +17,6 @@ gcd <- function(num1,num2) {
 #cat(gcd(54,888)$gcd,"\n")
 #cat(gcd(54,888)$steps)
 
-#exercise A - visualize coprimes
 n = 12
 mat.gcd = matrix(0, nrow=n, ncol=n)
 mat.steps = matrix(0, nrow=n, ncol=n)
@@ -34,6 +33,8 @@ for(a in 1:n){
 
 library('plot.matrix')
 plot(mat.gcd,col=c("black","white"))
-#plot(mat.steps)
+plot(mat.steps)
 image (0:n,0:n, mat.gcd , asp = 1, axes = F, col = c( 'white ', 'black ' ),
         xlab = 'a', ylab = 'b', main = 'Coprime Pairs ' )
+image (0:n,0:n, mat.steps , asp = 1, axes = F,
+       xlab = 'a', ylab = 'b', main = 'Steps' )
