@@ -34,9 +34,3 @@ for(i in 1:99){
 }
 
 image(1:99, 1:99, mat, asp = 1, axes = F, xlab ='', ylab ='')
-
-cat(kaprekars_steps(9218,0),"\n")
-cat(kaprekars_steps(9090,0),"\n")
-cat(kaprekars_steps(2222,0),"\n")
-cat(pad_num(as.character(89)),"\n")
-cat(pad_num(as.character(195)),"\n")
