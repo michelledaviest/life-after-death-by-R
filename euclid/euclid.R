@@ -34,7 +34,8 @@ for(a in 1:n){
 library('plot.matrix')
 plot(mat.gcd,col=c("black","white"))
 plot(mat.steps)
-image (0:n,0:n, mat.gcd , asp = 1, axes = F, col = c( 'white ', 'black ' ),
+image(x=0:n, y=0:n, mat.gcd , 
+      asp = 1, axes = F, col = c( 'white ', 'black ' ),
         xlab = 'a', ylab = 'b', main = 'Coprime Pairs ' )
-image (0:n,0:n, mat.steps , asp = 1, axes = F,
+image(0:n,0:n, mat.steps , asp = 1, axes = F,
        xlab = 'a', ylab = 'b', main = 'Steps' )
