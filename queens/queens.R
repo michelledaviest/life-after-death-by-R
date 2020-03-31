@@ -31,9 +31,22 @@ print_list <- function(list){
   }
 }
 
+plot_board <- function(list){
+  c = rep(1:0,N/2)
+  c = c(c,rep(0:1,N/2))
+  board = matrix(rep(c,(N*N)/length(c)),N,N,byrow=TRUE)
+  for(row in 1:dim(list)[1]){
+    board[list[row,][1],list[row,][2]] = 2
+  }
+  #print_list(board)
+  image(board, col=c("white","black","blue"))
+}
+
 nqueens <- function(mat,n,list){
   if(n==0){
     print_list(mat)
+    cat("\n")
+    plot_board(list)
     #print_list(list)
     return(TRUE)
   }
